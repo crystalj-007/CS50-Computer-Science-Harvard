@@ -1,4 +1,4 @@
-# Game where user must guess what the secret word is within six tries
+# Objective: Game where user must guess what the secret word is within a certain number of tries
 
 import sys
 import random
@@ -36,11 +36,8 @@ def main():
     else:
         wordsize = int(sys.argv[1]) 
         
-        
-    
-        
-    ########################################################################
-    # open correct file, each file has exactly LISTSIZE words
+       
+    # Open correct file, each file has exactly LISTSIZE words
     # Define the file path based on wordsize (base code)
     wl_filename = f"{wordsize}.txt"
     try:
@@ -49,16 +46,14 @@ def main():
         print(f"Error opening file {wl_filename}.")
         sys.exit(1) 
         
-        
-        
-    ###################################################################3
+
     # Load the word file into a list
     options = []
 
     with open(wl_filename, "r") as wordlist:
         options = [line.strip() for line in wordlist]
 
-    # Pseudorandomly select a word for the game
+    # Randomly select a word for the game
     random.seed()
     choice = random.choice(options)
 
@@ -71,13 +66,13 @@ def main():
     print(f"You have {guesses} tries to guess the {wordsize}-letter word I'm thinking of")
     #########################################################################
     
-    # main game loop, one iteration for each guess
+    # Main game loop, one iteration for each guess
     for i in range(guesses):
         # Obtain user's guess
         guess = get_guess(wordsize)
 
         # TODO #4
-        #set all elements of status array initially to 0, aka WRONG
+        # Set all elements of status array initially to 0, aka WRONG
         # Create a list to hold guess status, initially set to 0
         status = [WRONG] * wordsize  # Initialize with WRONG (0)
 
@@ -98,10 +93,6 @@ def main():
     if won !=True:
         print(f"Sorry, you lost. The word is {choice}")
         
-    
-    #return 0
-
-
 
 def get_guess(wordsize):
     # TODO 3. Prompt user for input. Ensure users actually provide a guess that is the correct length
@@ -130,14 +121,6 @@ def check_word (guess,wordsize, status, choice):
             
     return score
             
-    
-    # HINTS
-    # iterate over each letter of the guess
-        # iterate over each letter of the choice
-            # compare the current guess letter to the current choice letter
-                # if they're the same position in the word, score EXACT points (green) and break so you don't compare that letter further
-                #/ if it's in the word, but not the right spot, score CLOSE point (yellow)
-        # keep track of the total score by adding each individual letter's score from above
 
 def print_word(guess,wordsize, status):
 
@@ -152,8 +135,6 @@ def print_word(guess,wordsize, status):
         else:
             print(f"{guess[i]}", end=" ")
     print()
-           
-           
            
 #if __name__ == "__main__":
 main()
