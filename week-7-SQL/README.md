@@ -7,6 +7,5 @@ SQLite database file zipped in movies folder and stores data from IMDb about mov
 The CS50 Duck has been stolen!
 Goal: identify the thief, city they escaped to, and accomplice
 Given info: the theft took place on July 28, 2021 and that it took place on Humphrey Street.
-SQLite database  fiftyville.db, which contains tables of data from around the town is zipped in folder
-
+SQLite database  fiftyville.db contains tables of data from around the town.
 
