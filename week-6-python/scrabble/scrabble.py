@@ -1,5 +1,4 @@
-# Determine the winner of a short scrabble-like game, where two players each enter their word, 
-# and the higher scoring player wins.
+# Determine the winner of a short scrabble-like game, where two players each enter their word, and the higher scoring player wins.
 
 def compute_score(word):
     POINTS = [1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10]
